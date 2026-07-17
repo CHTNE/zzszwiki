@@ -19,16 +19,16 @@ jobs:
 
       - name: Install Node.js Dependencies
         run: pnpm install
-        working-directory: /home/chtne/chtne-web-zzszwiki
+        working-directory: /home/chtne/zzszwiki
 
       - name: Run Lint Check
         run: pnpm run lint
-        working-directory: /home/chtne/chtne-web-zzszwiki
+        working-directory: /home/chtne/zzszwiki
 
       - name: Build Vite Project
         run: pnpm run build
-        working-directory: /home/chtne/chtne-web-zzszwiki
+        working-directory: /home/chtne/zzszwiki
 
       - name: Reload Nginx
         run: sudo systemctl reload nginx
-        working-directory: /home/chtne/chtne-web-zzszwiki
+        working-directory: /home/chtne/zzszwiki
