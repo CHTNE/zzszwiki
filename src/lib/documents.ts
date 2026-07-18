@@ -70,12 +70,15 @@ export const groupedDocs = docs.reduce<Record<string, Doc[]>>((groups, doc) => {
   return groups
 }, {})
 
+// Keep page navigation in exactly the same order as the grouped sidebar.
+export const navigationDocs = Object.values(groupedDocs).flat()
+
 export const getDoc = (slug?: string) => docs.find((doc) => doc.slug === slug)
 
 export const getToc = (content: string): TocItem[] =>
   content
     .split(/\r?\n/)
-    .map((line) => line.match(/^(#{2,3})\s+(.+)$/))
+    .map((line) => line.match(/^(#{1,3})\s+(.+)$/))
     .filter((match): match is RegExpMatchArray => Boolean(match))
     .map((match) => ({
       level: match[1].length,

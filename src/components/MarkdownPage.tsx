@@ -3,7 +3,7 @@ import { Children, isValidElement, type ReactNode } from 'react'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
-import { docs, getDoc, getToc, slugify } from '../lib/documents'
+import { getDoc, getToc, navigationDocs, slugify } from '../lib/documents'
 
 const nodeText = (children: ReactNode): string =>
   Children.toArray(children).map((child) => {
@@ -12,7 +12,7 @@ const nodeText = (children: ReactNode): string =>
     return ''
   }).join('')
 
-const heading = (Tag: 'h2' | 'h3') => ({ children }: { children?: ReactNode }) => {
+const heading = (Tag: 'h1' | 'h2' | 'h3') => ({ children }: { children?: ReactNode }) => {
   const id = slugify(nodeText(children))
   return (
     <Tag id={id}>
@@ -23,6 +23,7 @@ const heading = (Tag: 'h2' | 'h3') => ({ children }: { children?: ReactNode }) =
 }
 
 const markdownComponents: Components = {
+  h1: heading('h1'),
   h2: heading('h2'),
   h3: heading('h3'),
   a: ({ href = '', children, ...props }) => {
@@ -40,9 +41,9 @@ export function MarkdownPage() {
   if (!doc) return <NotFound />
 
   const toc = getToc(doc.content)
-  const currentIndex = docs.findIndex((item) => item.slug === doc.slug)
-  const previous = docs[currentIndex - 1]
-  const next = docs[currentIndex + 1]
+  const currentIndex = navigationDocs.findIndex((item) => item.slug === doc.slug)
+  const previous = navigationDocs[currentIndex - 1]
+  const next = navigationDocs[currentIndex + 1]
   const readingMinutes = Math.max(1, Math.ceil(doc.content.length / 650))
 
   return (
