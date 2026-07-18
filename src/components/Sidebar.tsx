@@ -1,4 +1,4 @@
-import { BookOpen, Bus, ChevronRight, Compass, FileText, Home, Info, Map, Sparkles, X } from 'lucide-react'
+import { BookOpen, Bus, ChevronRight, Compass, FileText, Home, Info, Map, Sparkles, UsersRound, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { groupedDocs } from '../lib/documents'
@@ -9,6 +9,7 @@ const categoryIcons: Record<string, LucideIcon> = {
   '学习指南': BookOpen,
   '校园服务': Compass,
   '交通与地图': Map,
+  '社团资讯': UsersRound,
   '关于本站': Info,
 }
 
