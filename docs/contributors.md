@@ -2,7 +2,7 @@
 title: 贡献者
 description: 了解本 Wiki 的贡献者。
 category: 开始了解
-order: 2
+order: 4
 updated: 2026-07-17
 ---
 
