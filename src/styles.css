@@ -78,6 +78,11 @@ kbd { font: 500 11px/1 "Noto Sans SC", sans-serif; color: var(--text-muted); bac
 .eyebrow { display: flex; align-items: center; gap: 7px; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: .07em; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #5ab98c; box-shadow: 0 0 0 4px rgba(90,185,140,.12); }
 .sidebar-intro p { margin: 9px 0 0; color: var(--text-muted); font-size: 12px; line-height: 1.7; }
+.visit-counter { margin: -12px 2px 25px; padding: 11px 13px; display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.visit-counter-icon { flex: 0 0 30px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; color: var(--primary); background: var(--primary-soft); }
+.visit-counter > span:last-child { min-width: 0; display: grid; gap: 2px; }
+.visit-counter small { color: var(--text-muted); font-size: 10px; }
+.visit-counter strong { color: var(--text); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .nav-section { margin-bottom: 24px; }
 .nav-heading { margin: 0 9px 8px; display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 11px; font-weight: 700; letter-spacing: .09em; }
 .nav-list { display: grid; gap: 2px; }

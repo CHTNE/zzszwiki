@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import { MarkdownPage } from './components/MarkdownPage'
 import { SearchDialog } from './components/SearchDialog'
 import { Sidebar } from './components/Sidebar'
+import { recordInitialVisit } from './lib/visitCounter'
 
 type Theme = 'light' | 'dark'
 
@@ -17,7 +18,21 @@ function App() {
   const [theme, setTheme] = useState<Theme>(getInitialTheme)
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [visitCount, setVisitCount] = useState<number | null>(null)
+  const [visitCountFailed, setVisitCountFailed] = useState(false)
   const location = useLocation()
+
+  useEffect(() => {
+    let active = true
+    recordInitialVisit()
+      .then((count) => {
+        if (active) setVisitCount(count)
+      })
+      .catch(() => {
+        if (active) setVisitCountFailed(true)
+      })
+    return () => { active = false }
+  }, [])
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -52,7 +67,12 @@ function App() {
         onOpenMenu={() => setMenuOpen(true)}
         onOpenSearch={() => setSearchOpen(true)}
       />
-      <Sidebar open={menuOpen} onClose={() => setMenuOpen(false)} />
+      <Sidebar
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        visitCount={visitCount}
+        visitCountFailed={visitCountFailed}
+      />
       <div className="content-grid">
         <Routes>
           <Route path="/" element={<Navigate to="/docs/welcome" replace />} />
