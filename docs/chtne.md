@@ -2,7 +2,7 @@
 title: CHTNE化学社简介
 description: 了解在枣庄三中活动的根基最深厚的化学学科社团。
 category: 社团资讯
-order: 2
+order: 1
 updated: 2026-07-18
 ---
 
