@@ -3,7 +3,7 @@ title: 枣庄三中辩论社简介
 description: 了解枣庄三中的辩论社团。
 category: 社团资讯
 order: 4
-updated: 2026-07-21
+updated: 2026-07-22
 ---
 
 > 社团的介绍由各个社团的负责人撰写，因此 Wiki 不保证所有信息的真实性和时效性。
