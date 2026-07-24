@@ -22,6 +22,7 @@ updated: 2026-07-21
 - [枣庄三中电子科技社团](/docs/cem-team)
 - [枣庄三中辩论社](/docs/bianlun)
 - [夏莱驻三中办事处](/docs/baclub) *
+- [月樱动漫社](/docs/dmclub.md)
 
 # 在市中校区活动的社团
 
