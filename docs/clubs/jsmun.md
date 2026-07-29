@@ -1,7 +1,6 @@
 ---
 title: 巨山模拟联合国社团简介
 description: 了解枣庄三中新城校区的模拟联合国社团。
-category: 社团资讯
 order: 3
 updated: 2026-07-21
 ---

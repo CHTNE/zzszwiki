@@ -75,7 +75,7 @@ function App() {
       />
       <div className="content-grid">
         <Routes>
-          <Route path="/" element={<Navigate to="/docs/welcome" replace />} />
+          <Route path="/" element={<Navigate to="/docs/introduction/welcome" replace />} />
           <Route path="/docs/*" element={<MarkdownPage />} />
           <Route path="*" element={<Navigate to="/docs/not-found" replace />} />
         </Routes>

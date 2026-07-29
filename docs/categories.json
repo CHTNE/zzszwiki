@@ -1,0 +1,14 @@
+{
+  "introduction": {
+    "name": "开始了解",
+    "order": 1
+  },
+  "campus-life": {
+    "name": "校园生活",
+    "order": 2
+  },
+  "clubs": {
+    "name": "社团资讯",
+    "order": 3
+  }
+}

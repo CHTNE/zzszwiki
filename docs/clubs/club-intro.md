@@ -1,7 +1,6 @@
 ---
 title: 社团目录
 description: 了解在枣庄三中两校区活动的社团。
-category: 社团资讯
 order: 0
 updated: 2026-07-21
 ---
@@ -18,12 +17,19 @@ updated: 2026-07-21
 
 # 在两校区活动的社团
 
+<<<<<<< HEAD:docs/club-intro.md
 - [CHTNE化学社](/docs/chtne) *
 - [枣庄三中电子科技社团](/docs/cem-team)
 - [枣庄三中辩论社](/docs/bianlun)
 - [夏莱驻三中办事处](/docs/baclub) *
 - [月樱动漫社](/docs/dmclub)
 - [术力口社](/docs/vocalclub) *
+=======
+- [CHTNE化学社](/docs/clubs/chtne) *
+- [枣庄三中电子科技社团](/docs/clubs/cem-team)
+- [枣庄三中辩论社](/docs/clubs/bianlun)
+- [夏莱驻三中办事处](/docs/clubs/baclub) *
+>>>>>>> 82e52b8 (refactor: docs category):docs/clubs/club-intro.md
 
 # 在市中校区活动的社团
 
@@ -31,7 +37,7 @@ updated: 2026-07-21
 
 # 在新城校区活动的社团
 
-- [巨山模拟联合国社团](/docs/jsmun)
+- [巨山模拟联合国社团](/docs/clubs/jsmun)
 
 # 添加社团词条
 

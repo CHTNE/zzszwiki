@@ -1,7 +1,6 @@
 ---
 title: 校区概况与交通指南
 description: 了解枣庄三中两校区及附近的公共交通方式。
-category: 开始了解
 order: 2
 updated: 2026-07-18
 ---

@@ -1,7 +1,6 @@
 ---
 title: 夏莱驻三中办事处简介
 description: 了解枣庄三中的BA社/南梁养成系/猫娘社/Galgame系。
-category: 社团资讯
 order: 5
 updated: 2026-07-22
 ---

@@ -19,13 +19,24 @@ pnpm preview
 
 ## 新增文档
 
-在 `docs` 目录中新建 Markdown 文件：
+先在 `docs/categories.json` 中配置分类目录、中文名称和侧边栏顺序：
+
+```json
+{
+  "campus-life": {
+    "name": "校园生活",
+    "order": 2
+  }
+}
+```
+
+然后在对应的分类目录中新建 Markdown 文件，例如
+`docs/campus-life/club-guide.md`：
 
 ```md
 ---
 title: 文档标题
 description: 一句话摘要
-category: 校园生活
 order: 10
 updated: 2026-07-17
 ---
@@ -33,7 +44,10 @@ updated: 2026-07-17
 正文内容……
 ```
 
-文件名会成为访问路径。例如 `docs/club-guide.md` 对应 `/docs/club-guide`。保存后，文档会自动进入侧栏、路由和搜索结果，无需在代码中注册。
+目录结构会成为分类和访问路径。例如上面的文件属于“校园生活”，对应
+`/docs/campus-life/club-guide`。`categories.json` 中的 `order` 决定分类在侧边栏中的顺序，
+Markdown frontmatter 中的 `order` 决定文章在分类内部的顺序。保存后，文档会自动进入侧栏、
+路由和搜索结果，无需在代码中注册。
 
 ## 项目命令
 

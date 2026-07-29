@@ -3,7 +3,7 @@ import { Children, isValidElement, type ReactNode } from 'react'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
-import { getDoc, getToc, navigationDocs, slugify } from '../lib/documents'
+import { getDoc, getLegacyDoc, getToc, navigationDocs, slugify } from '../lib/documents'
 
 const nodeText = (children: ReactNode): string =>
   Children.toArray(children).map((child) => {
@@ -38,7 +38,10 @@ export function MarkdownPage() {
   const { '*': slug } = useParams()
   const doc = getDoc(slug)
 
-  if (!doc) return <NotFound />
+  if (!doc) {
+    const legacyDoc = getLegacyDoc(slug)
+    return legacyDoc ? <Navigate to={legacyDoc.path} replace /> : <NotFound />
+  }
 
   const toc = getToc(doc.content)
   const currentIndex = navigationDocs.findIndex((item) => item.slug === doc.slug)
@@ -50,7 +53,7 @@ export function MarkdownPage() {
     <>
       <main className="document-shell">
         <article className="document">
-          <div className="breadcrumbs"><Link to="/docs/welcome">校园指南</Link><span>/</span><span>{doc.category}</span></div>
+          <div className="breadcrumbs"><Link to="/docs/introduction/welcome">校园指南</Link><span>/</span><span>{doc.category}</span></div>
           <header className="article-header">
             <span className="article-kicker">{doc.category}</span>
             <h1>{doc.title}</h1>
@@ -105,11 +108,11 @@ function NotFound() {
       <div className="not-found-code">404</div>
       <h1>这页内容还没写好</h1>
       <p>它可能被移动了，也可能正等待一位热心同学来补充。</p>
-      <Link className="primary-button" to="/docs/welcome">返回指南首页</Link>
+      <Link className="primary-button" to="/docs/introduction/welcome">返回指南首页</Link>
     </main>
   )
 }
 
 export function DefaultRedirect() {
-  return <Navigate to="/docs/welcome" replace />
+  return <Navigate to="/docs/introduction/welcome" replace />
 }

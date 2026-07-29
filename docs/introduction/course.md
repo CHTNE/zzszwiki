@@ -1,7 +1,6 @@
 ---
 title: 课程设置
 description: 了解高中需要学习的课程
-category: 开始了解
 order: 4
 updated: 2026-07-22
 ---

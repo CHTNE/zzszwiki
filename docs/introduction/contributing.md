@@ -1,7 +1,6 @@
 ---
 title: 参与贡献
 description: 了解如何新增、修改和维护校园指南中的内容。
-category: 开始了解
 order: 114514
 updated: 2026-07-17
 ---

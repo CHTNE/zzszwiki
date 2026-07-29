@@ -1,16 +1,16 @@
 import { BookOpen, Bus, ChevronRight, Compass, Eye, FileText, Home, Info, Map, Sparkles, UsersRound, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
-import { groupedDocs } from '../lib/documents'
+import { docCategories } from '../lib/documents'
 
 const categoryIcons: Record<string, LucideIcon> = {
-  '开始了解': Sparkles,
-  '校园生活': Home,
-  '学习指南': BookOpen,
-  '校园服务': Compass,
-  '交通与地图': Map,
-  '社团资讯': UsersRound,
-  '关于本站': Info,
+  introduction: Sparkles,
+  'campus-life': Home,
+  learning: BookOpen,
+  services: Compass,
+  transport: Map,
+  clubs: UsersRound,
+  about: Info,
 }
 
 type SidebarProps = {
@@ -47,13 +47,13 @@ export function Sidebar({ open, onClose, visitCount, visitCountFailed }: Sidebar
               </strong>
             </span>
           </div>
-          {Object.entries(groupedDocs).map(([category, items]) => {
-            const Icon = categoryIcons[category] ?? FileText
+          {docCategories.map((category) => {
+            const Icon = categoryIcons[category.path] ?? FileText
             return (
-              <section className="nav-section" key={category}>
-                <div className="nav-heading"><Icon size={15} />{category}</div>
+              <section className="nav-section" key={category.path}>
+                <div className="nav-heading"><Icon size={15} />{category.name}</div>
                 <div className="nav-list">
-                  {items.map((doc) => (
+                  {category.docs.map((doc) => (
                     <NavLink
                       key={doc.slug}
                       to={doc.path}
