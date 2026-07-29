@@ -1,7 +1,6 @@
 ---
 title: 月樱动漫社简介
 description: 了解枣庄三中的动漫社。
-category: 社团资讯
 order: 6
 updated: 2026-07-24
 ---

@@ -1,7 +1,6 @@
 ---
 title: 术力口社简介
 description: 了解枣庄三中的术力口社。
-category: 社团资讯
 order: 7
 updated: 2026-07-29
 ---
